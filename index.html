@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" >
+<!-- manifest="cache.appcache" -->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+		<title>Web Components Preso</title>
+		<meta name="description" content="simple slides for WCAG">
+		<meta name="author" content="Josh Knutson">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+		td.vtop{vertical-align: top;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Web Components 🚀 Rocket to the  🌑</h1>
+					<h3>Making shared front end code, across the company</h3>
+				</section>
+				<section>
+					<h3>Josh Knutson</h3>
+					<ul>
+						<li>Lead Software Developer</li>
+						<li>@ Imagtrend for 13+ years</li>
+						<li>Working in CF, JS, CSS, and some .NET</li>
+					</ul>
+				</section>
+				<section>
+					<h2>What is it</h2>
+					<ul>
+						<li>Custom Elements - Valid HTML Elements, with APIS</li>
+						<li>Shadow DOM - isolating CSS and JS</li>
+						<li>HTML templates - don't get used until called upon</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Custom Elements</h2>
+					<ul>
+						<li>HTML Elements, like  &lt;div&gt; but can be anything like &lt;power-chart&gt; </li>
+<!-- JS
+<pre>
+class PowerChart extends HTMLElement {
+connectedCallback() {
+	this.innerHTML = `&lt;h1&gt;I have the POWER&lt;/h1&gt;`;
+}}
+customElements.define('power-chart', PowerChart);</pre>
+HTML
+<pre>
+&lt;power-chart&gt;&lt;/power-chart&gt;
+</pre> -->
+<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="js,result" data-user="joshknutson" data-slug-hash="poNMzrJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="power-chart">
+	<span>See the Pen <a href="https://codepen.io/joshknutson/pen/poNMzrJ">
+	power-chart</a> by Josh Knutson (<a href="https://codepen.io/joshknutson">@joshknutson</a>)
+	on <a href="https://codepen.io">CodePen</a>.</span>
+  </p>
+  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+					</ul>
+				</section>
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section id="stenciljs">
+						<h2>Using a compiler instead of hand rolling each element</h2>
+						<ul>
+							<li>StencilJS
+								<ul>
+									<li>Built by IONIC</li>
+									<li>Add extra hooks for Vue,React, Angular</li>
+									<li>Static Generation</li>
+									<li>Generates Standards-based web components</li>
+								</ul>
+							</li>
+							<li>Can compile for mobile applications or Web applications</li>
+						</ul>
+					</section>
+					<section id="storybookjs">
+						<h2>Creating a story</h2>
+						<ul>
+							<li>Making components work in isolation with Storybook
+								<ul>
+									<li>Build components in isolation</li>
+									<li>Documenation lives with live Example</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Additional Information</h2>
+					<div>
+						<ul>
+							<li><a href="https://stenciljs.com/" target="_blank" rel="noopener noreferrer">Stencil</a></li>
+							<li><a href="https://storybook.js.org/">Storybook</a></li>
+							<li><a href="https://dev.azure.com/imagetrend/Patient-Registry/_git/pr-web-components">PR web components repo</a></li>
+						</ul>
+					</div>
+				</section>
+				<section class="middle formula">
+					<p>
+						Questions?
+					</p>
+				</section>
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		// Check if new appcache is available, load it, and reload page.
+		  if (window.applicationCache) {
+			window.applicationCache.addEventListener('updateready', function(e) {
+			  if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+				  window.applicationCache.swapCache();
+				if (confirm('A new version of this site is available. Load it?')) {
+				  window.location.reload();
+				}
+			  }
+			}, false);
+		  }
+		</script>
+	</body>
+</html>
